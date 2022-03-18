@@ -1,0 +1,80 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+      {
+        "alignment": "right",
+        "segments": [
+          {
+            "foreground": "#007ACC",
+            "properties": {
+              "template": " {{ .CurrentDate | date .Format }} ",
+              "time_format": "15:04:05"
+            },
+            "style": "plain",
+            "type": "time"
+          }
+        ],
+        "type": "prompt",
+        "vertical_offset": -1
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+            {
+                "type": "python",
+                "style": "diamond",
+                "leading_diamond": "\ue0b6",
+                "foreground": "#fff",
+                "background": "#193549",
+                "properties": {
+                  "template": "\uE235 {{if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+                }
+              },
+          {
+            "background": "#91ddff",
+            "foreground": "#193549",
+            "powerline_symbol": "\ue0b0",
+            "properties": {
+              "folder_icon": "\uf115",
+              "folder_separator_icon": " \ue0b1 ",
+              "home_icon": "\uf7db",
+              "style": "agnoster",
+              "template": " {{ .Path }} "
+            },
+            "style": "powerline",
+            "type": "path"
+          },
+          {
+            "background": "#95ffa4",
+            "foreground": "#193549",
+            "powerline_symbol": "\ue0b0",
+            "properties": {
+              "template": " {{ .HEAD }} "
+            },
+            "style": "powerline",
+            "type": "git"
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "foreground": "#007ACC",
+            "properties": {
+              "template": "\u276f "
+            },
+            "style": "plain",
+            "type": "text"
+          }
+        ],
+        "type": "prompt"
+      }
+    ],
+    "final_space": true,
+    "version": 1
+  }
+  
